@@ -27,7 +27,7 @@ const int bluePin = D7;
 
 // DHT Sensor Setup
 #define DHTPIN 0        // D3 (GPIO0) on ESP8266
-#define DHTTYPE DHT11   // DHT11 sensor type
+#define DHTTYPE DHT11   
 DHT dht(DHTPIN, DHTTYPE);
 LiquidCrystal_I2C lcd(0x27, 16, 2); 
 
@@ -101,10 +101,10 @@ void readAndDisplaySensorData() {
   // Automatic fan control if manualFanControl is false
   if (!manualFanControl) {
     if (temperature > 25.0) {
-      digitalWrite(relayPin, HIGH); // Turn fan on
+      digitalWrite(relayPin, HIGH); 
       Serial.println("Fan ON (Automatic)");
     } else {
-      digitalWrite(relayPin, LOW); // Turn fan off
+      digitalWrite(relayPin, LOW); 
       Serial.println("Fan OFF (Automatic)");
     }
   }
